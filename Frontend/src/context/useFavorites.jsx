@@ -4,7 +4,7 @@ const useFavorites = () => {
   const [favorites, setFavorites] = useState(() => {
     
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('countryFavorites');
+      const saved = localStorage.getItem('productFavorites');
       return saved ? JSON.parse(saved) : [];
     }
     return [];
@@ -12,14 +12,14 @@ const useFavorites = () => {
 
   
   useEffect(() => {
-    localStorage.setItem('countryFavorites', JSON.stringify(favorites));
+    localStorage.setItem('productFavorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  const toggleFavorite = (countryCode) => {
+  const toggleFavorite = (productCode) => {
     setFavorites(prev => {
-      const newFavorites = prev.includes(countryCode)
-        ? prev.filter(code => code !== countryCode)
-        : [...prev, countryCode];
+      const newFavorites = prev.includes(productCode)
+        ? prev.filter(code => code !== productCode)
+        : [...prev, productCode];
       return newFavorites;
     });
   };

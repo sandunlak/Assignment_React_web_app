@@ -39,9 +39,9 @@ const Register = () => {
   };
 
   return (
-    <div className="h-screen w-screen fixed inset-0 bg-gradient-to-br from-blue-700 to-purple-800 overflow-hidden">
+    <div className="h-screen w-screen fixed inset-0 bg-gradient-to-br from-rose-50 to-rose-100 overflow-auto">
       <Navbar />
-      <div className="h-screen w-full flex items-center justify-center p-4 pt-20">
+      <div className="w-full bg-teal-600 text-white shadow-md sticky top-0 z-50">
         <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 transform transition-all duration-300 hover:shadow-2xl">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">Create Account</h2>
           {error && (
